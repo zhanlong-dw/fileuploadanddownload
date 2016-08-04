@@ -31,7 +31,7 @@ public class UploadServlet extends HttpServlet {
 		//从request中获取文本输入流信息
 		InputStream fileSourceStream = request.getInputStream();
 		String tempFileName = "F:/tempFile";
-		
+
 		//设置临时文件，保存待上传的文本输入流
 		File tempFile = new File(tempFileName);
 		
