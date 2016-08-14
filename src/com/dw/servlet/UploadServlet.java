@@ -5,10 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,7 +47,7 @@ public class UploadServlet extends HttpServlet {
 		
 		//获取上传文件的名称 
 		RandomAccessFile randomFile = new RandomAccessFile(tempFile,"r");
-		randomFile.readLine();  //必须先跳过一行 因为文件名杂第二行
+		randomFile.readLine();  //必须先跳过一行 因为文件名在第二行
 		String str = randomFile.readLine();
 		int start = str.lastIndexOf("=") + 2;
 		int end = str.lastIndexOf("\"");
@@ -87,7 +85,7 @@ public class UploadServlet extends HttpServlet {
 		}
 		File saveFile = new File(realPath,filename);
 		RandomAccessFile randomAccessFile = new RandomAccessFile(saveFile,"rw");
-		//从临时文件中读取文件内容，（根据起止位置读取）
+		//根据起止位置从临时文件中读取文件内容
 		randomFile.seek(startIndex);
 		while(startIndex < endIndex){
 			randomAccessFile.write(randomFile.readByte());
@@ -104,3 +102,4 @@ public class UploadServlet extends HttpServlet {
 	}
 
 }
+

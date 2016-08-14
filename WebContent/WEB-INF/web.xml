@@ -17,6 +17,31 @@
     <servlet-name>UploadServlet</servlet-name>
     <url-pattern>/uploadServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>SmartDownloadServlet</servlet-name>
+    <servlet-class>com.dw.servlet.SmartDownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SmartDownloadServlet</servlet-name>
+    <url-pattern>/smartDownloadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SmartUploadServlet</servlet-name>
+    <servlet-class>com.dw.servlet.SmartUploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SmartUploadServlet</servlet-name>
+    <url-pattern>/smartUploadServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ZipDownloadServlet</servlet-name>
+    <servlet-class>com.dw.servlet.ZipDownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ZipDownloadServlet</servlet-name>
+    <url-pattern>/zipDownloadServlet</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>

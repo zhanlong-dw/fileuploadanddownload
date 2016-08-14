@@ -4,17 +4,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 public class DownloadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     public DownloadServlet() {
         super();
     }
@@ -42,7 +39,6 @@ public class DownloadServlet extends HttpServlet {
 			//关闭流
 			ouputStream.close();
 			inputStream.close();
-			
 		}else{
 			request.setAttribute("errorResult", "文件不存在,下载失败!");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
